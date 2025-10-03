@@ -19,7 +19,7 @@
     :root{--bg:#2a2a2a;--ink:#e8e8e8;--muted:#888;--accent:#d4b294;--maxw:1100px;--gap:56px;--radius:20px;--shadow:0 12px 35px rgba(0,0,0,.6)}
     *{box-sizing:border-box}
     html,body{margin:0;background:var(--bg);color:var(--ink)}
-    html{scroll-behavior:smooth;scroll-snap-type:y mandatory}
+    html{scroll-behavior:smooth}
     section.page{scroll-snap-align:start}
     img{max-width:100%;display:block}
     .container{max-width:var(--maxw);margin:0 auto;padding:0 22px}
@@ -58,6 +58,9 @@
     .section-title .bar{width:40px;height:4px;background:var(--accent);border-radius:6px;margin-bottom:8px}
     
     @media (max-width: 768px) {
+      html {
+        scroll-snap-type: y mandatory;
+      }
       .gallery {
         grid-template-columns: repeat(2, 1fr);
         gap: 12px;

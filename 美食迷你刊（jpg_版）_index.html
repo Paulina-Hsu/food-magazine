@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Food Aesthetics · Mini Issue (JPG Only)</title>
+  <meta name="description" content="一頁式高質感美食電子雜誌（10頁迷你刊，JPG 版，內嵌 CSS）。" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Food Aesthetics · Mini Issue (JPG Only)" />
+  <meta property="og:description" content="一頁式高質感美食電子雜誌（10頁迷你刊，JPG 版，內嵌 CSS）。" />
+  <meta property="og:image" content="images/p01_cover_3x4.jpg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Noto+Serif+TC:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- 內嵌 CSS：JPG 專用、單檔可直接開啟 -->
+  <style>
+    :root{--bg:#2a2a2a;--ink:#e8e8e8;--muted:#888;--accent:#d4b294;--maxw:1100px;--gap:56px;--radius:20px;--shadow:0 12px 35px rgba(0,0,0,.6)}
+    *{box-sizing:border-box}
+    html,body{margin:0;background:var(--bg);color:var(--ink)}
+    html{scroll-behavior:smooth;scroll-snap-type:y mandatory}
+    section.page{scroll-snap-align:start}
+    img{max-width:100%;display:block}
+    .container{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+    /* Sticky 導覽（第 2 頁後顯示） */
+    .topnav{position:sticky;top:0;z-index:10;backdrop-filter:saturate(140%) blur(8px);background:rgba(42,42,42,.85);border-bottom:1px solid rgba(255,255,255,.08)}
+    .topnav .wrap{display:flex;align-items:center;justify-content:space-between;max-width:var(--maxw);margin:0 auto;padding:10px 22px}
+    .brand{letter-spacing:.18em;text-transform:uppercase;font:600 12px Inter, system-ui, -apple-system, "PingFang TC", "Noto Sans TC", sans-serif;color:var(--muted)}
+    .toc{display:flex;gap:16px;flex-wrap:wrap}
+    .toc a{font:500 12px Inter, "Noto Sans TC", sans-serif;color:#ccc;text-decoration:none;padding:8px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.1)}
+    .toc a:hover{background:#333;box-shadow:none}
+    /* 封面（無字、全屏） */
+    .cover{min-height:100vh;display:grid;place-items:center;overflow:hidden}
+    .cover img{width:100%;height:100%;object-fit:cover;object-position:center}
+    @media (max-width:768px){.cover{min-height:100svh}}
+    /* 內頁通用 */
+    .section{padding:80px 0}
+    h1{font-family:"Playfair Display","Noto Serif TC",serif;font-weight:700;font-size:clamp(28px,3.4vw,46px);line-height:1.2;margin:.1em 0 .4em;letter-spacing:.01em}
+    h2{font-family:"Playfair Display","Noto Serif TC",serif;font-weight:700;font-size:clamp(22px,2.2vw,30px);margin:.2em 0 .5em}
+    .meta{color:var(--muted);font:400 14px/1.8 Inter,"Noto Sans TC",sans-serif;margin-bottom:22px}
+    .lead{font:400 clamp(16px,1.6vw,18px)/1.9 Inter,"Noto Sans TC",sans-serif;color:#ddd;margin:10px 0 34px}
+    .hero{aspect-ratio:16/9;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);background:#333;margin:18px 0 26px}
+    .hero img{width:100%;height:100%;object-fit:cover;object-position:center}
+    .article{column-gap:var(--gap);column-count:2;font:400 clamp(15px,1.45vw,18px)/2 Inter,"Noto Sans TC",sans-serif}
+    @media (max-width:980px){.article{column-count:1}}
+    .dropcap:first-letter{float:left;font:700 58px "Playfair Display","Noto Serif TC",serif;line-height:.9;padding-right:.12em;color:var(--accent);margin-top:.08em}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin:36px 0 14px}
+    @media (max-width:980px){.cards{grid-template-columns:1fr}}
+    .card{background:#333;border-radius:18px;padding:20px 20px 18px;box-shadow:var(--shadow);border:1px solid rgba(255,255,255,.08)}
+    .card h3{font:700 18px "Playfair Display","Noto Serif TC",serif;margin:0 0 8px}
+    .card p{margin:.2em 0 0;color:#bbb;font:400 15px/1.9 Inter,"Noto Sans TC",sans-serif}
+    .gallery{display:grid;gap:16px;grid-template-columns:repeat(3,1fr)}
+    .gallery .tile{aspect-ratio:1/1;border-radius:16px;overflow:hidden;background:#333}
+    .gallery img{width:100%;height:100%;object-fit:cover}
+    footer{padding:56px 0 60px;color:var(--muted);text-align:center;font:400 13px/1.9 Inter,"Noto Sans TC",sans-serif}
+    .section-title{display:flex;align-items:end;gap:12px}
+    .section-title .bar{width:40px;height:4px;background:var(--accent);border-radius:6px;margin-bottom:8px}
+  </style>
+</head>
+<body>
+  <!-- 第 1 頁：封面（JPG，無字） -->
+  <section id="p01" class="page cover" aria-label="封面：北海道干貝">
+    <img src="images/p01_cover_3x4.jpg.jpg" alt="北海道干貝擺盤特寫" width="2400" height="3200" loading="eager" fetchpriority="high">
+  </section>
+
+  <!-- Sticky 導覽 -->
+  <nav class="topnav" aria-label="頁面導覽">
+    <div class="wrap">
+      <div class="brand">Food Aesthetics · Mini Issue</div>
+      <div class="toc">
+        <a href="#p02">目錄</a>
+        <a href="#p03">甜蝦・白蘿蔔</a>
+        <a href="#p04">星鰻・味噌</a>
+        <a href="#p05">花枝・茄子</a>
+        <a href="#p06">龍蝦・娃娃菜</a>
+        <a href="#p07">創意漢堡</a>
+        <a href="#p08">和牛</a>
+        <a href="#p09">食光掠影</a>
+        <a href="#p10">餘韻</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 第 2 頁：目錄 / 宣言 -->
+  <section id="p02" class="page section" aria-label="目錄與宣言">
+    <div class="container">
+      <div class="section-title"><div class="bar"></div><h1>本期目錄</h1></div>
+      <p class="lead">以四季為序，我們觀察火候與食材在舌尖的節奏：從海的清澈，到炭火的低語，每一道料理都是一次短途旅行。</p>
+      <ul class="article" style="list-style:none;padding-left:0;margin-top:22px">
+        <li>01 — 甜蝦 × 白蘿蔔｜昆布高湯的清亮與海味的甜</li>
+        <li>02 — 日本星鰻 × 味噌｜油脂、鹹香與酸度的平衡</li>
+        <li>03 — 花枝 × 日本茄子｜炙香與柔軟的雙重口感</li>
+        <li>04 — 活體龍蝦 × 娃娃菜｜海浪與奶泡的對話</li>
+        <li>05 — 創意漢堡｜牛肉、起司、紫菜的三拍子</li>
+        <li>06 — 和牛｜炭火的留白與肉汁的節奏</li>
+        <li>07 — 食光掠影｜片段、細節與餘韻</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 第 3 頁：甜蝦 + 白蘿蔔 -->
+  <section id="p03" class="page section" aria-label="甜蝦與白蘿蔔">
+    <div class="container">
+      <figure class="hero"><img src="images/p03_shrimp_radish_16x9.jpg" alt="甜蝦搭配白蘿蔔，昆布高湯清亮見底" width="2400" height="1350" loading="lazy"></figure>
+      <h2>甜蝦 × 白蘿蔔</h2>
+      <div class="meta">昆布高湯 · 木魚花 · 清澈與鮮甜</div>
+      <div class="article dropcap">
+        寒涼的高湯托起白蘿蔔的透明甜度，幾近無聲。甜蝦以最簡單的方式登場，肉質彈而不脆，像是剛被海風推上岸。木魚花在熱氣裡輕顫，帶出煙燻與氨基酸的香氣，收束整體輪廓。這是一道以留白為主題的前奏，將味蕾帶回到海的起點。
+      </div>
+      <div class="cards">
+        <article class="card"><h3>產地故事</h3><p>白蘿蔔以低溫慢煮至透，吸飽昆布的旨味；甜蝦則選當季，新鮮度決定口感彈性。</p></article>
+        <article class="card"><h3>料理技法</h3><p>高湯不滾沸，維持70–80℃的溫度，避免混濁；蝦身汆燙後立即冰鎮，保留甜度。</p></article>
+        <article class="card"><h3>搭配建議</h3><p>純米吟釀或礦物感鮮明的白酒：突顯清甜與海味的乾淨線條。</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 第 4 頁：日本星鰻 + 味噌 -->
+  <section id="p04" class="page section" aria-label="日本星鰻與味噌">
+    <div class="container">
+      <figure class="hero"><img src="images/p04_anago_miso_16x9.jpg" alt="日本星鰻搭配味噌醬與蓮藕片" width="2400" height="1350" loading="lazy"></figure>
+      <h2>日本星鰻 × 味噌</h2>
+      <div class="meta">油脂 · 鹹香 · 微酸的平衡</div>
+      <div class="article dropcap">
+        星鰻的油脂溫柔而綿長，味噌帶來厚度與鹹香，酸度則像輕輕推進的槳，讓整體不致遲滯。盤中一抹赤色的蓮藕，成為視覺與味覺的節點，提醒我們：平衡不是平均，而是恰到好處的留白與加重。
+      </div>
+    </div>
+  </section>
+
+  <!-- 第 5 頁：花枝 + 日本茄子 -->
+  <section id="p05" class="page section" aria-label="花枝與日本茄子">
+    <div class="container">
+      <figure class="hero"><img src="images/p05_squid_eggplant_16x9.jpg" alt="花枝切片搭配日本茄子與抹綠醬泥" width="2400" height="1350" loading="lazy"></figure>
+      <h2>花枝 × 日本茄子</h2>
+      <div class="meta">炙香 · 彈性 · 柔軟</div>
+      <div class="article dropcap">
+        花枝的刀工讓口感呈現微妙的彈與斷，炙燒輕帶焦香；日本茄子經高溫後釋出奶油般的柔軟，與醬泥的辛香對位。兩者一緊一鬆，像拍點分明的二重奏，節奏完成於齒間。
+      </div>
+    </div>
+  </section>
+
+  <!-- 第 6 頁：活體龍蝦 + 娃娃菜 -->
+  <section id="p06" class="page section" aria-label="龍蝦與娃娃菜">
+    <div class="container">
+      <figure class="hero"><img src="images/p06_lobster_babycabbage_16x9.jpg" alt="活體龍蝦與炙烤娃娃菜，搭配奶泡醬" width="2400" height="1350" loading="lazy"></figure>
+      <h2>活體龍蝦 × 娃娃菜</h2>
+      <div class="meta">海水的甜 · 奶泡的柔 · 炙烤的苦</div>
+      <div class="article dropcap">
+        龍蝦尾段緊致的纖維與天然甜味，遇上奶泡醬的圓潤，彼此相互映襯；娃娃菜經炙烤後帶出微苦，使整體更立體。這道菜像海浪退後後的沙紋，層次清楚，節奏從容。
+      </div>
+    </div>
+  </section>
+
+  <!-- 第 7 頁：創意漢堡（牛肉／起司／紫菜） -->
+  <section id="p07" class="page section" aria-label="創意漢堡">
+    <div class="container">
+      <figure class="hero"><img src="images/p07_creative_burger_16x9.jpg" alt="創意漢堡：牛肉、起司與紫菜的三拍子" width="2400" height="1350" loading="lazy"></figure>
+      <h2>創意漢堡</h2>
+      <div class="meta">牛肉 · 起司 · 紫菜</div>
+      <div class="article dropcap">
+        香煎後的麵包邊緣焦脆，牛肉多汁而有存在感；起司以溫度延展，紫菜則提供一抹海的氣息，讓街頭語彙與海味優雅地連線。這不是堆疊，而是組合——三拍子踩在同一個重拍上。
+      </div>
+    </div>
+  </section>
+
+  <!-- 第 8 頁：和牛 -->
+  <section id="p08" class="page section" aria-label="和牛">
+    <div class="container">
+      <figure class="hero"><img src="images/p08_wagyu_16x9.jpg" alt="和牛切條置於葉片之上，旁有三款調味與味噌醬" width="2400" height="1350" loading="lazy"></figure>
+      <h2>和牛</h2>
+      <div class="meta">炭火 · 油脂 · 節制</div>
+      <div class="article dropcap">
+        外層僅作薄脆焦化，封住油脂；切面仍維持玫瑰色。三款佐料並非喧賓奪主，而是提供不同的入口角度：礦物感、辛香與醬的厚度。最重要的，是火候之後保留的靜默。
+      </div>
+    </div>
+  </section>
+
+  <!-- 第 9 頁：畫廊 / 幕後（以 1:1 JPG 填入） -->
+  <section id="p09" class="page section" aria-label="畫廊與幕後">
+    <div class="container">
+      <div class="section-title"><h1>食光掠影</h1></div>
+      <div class="gallery" aria-label="方形圖牆">
+        <figure class="tile"><img src="images/p09_gallery_01.jpg" alt="料理局部特寫 1" loading="lazy"></figure>
+        <figure class="tile"><img src="images/p09_gallery_02.jpg" alt="料理局部特寫 2" loading="lazy"></figure>
+        <figure class="tile"><img src="images/p09_gallery_03.jpg" alt="料理局部特寫 3" loading="lazy"></figure>
+        <figure class="tile"><img src="images/p09_gallery_04.jpg" alt="料理局部特寫 4" loading="lazy"></figure>
+        <figure class="tile"><img src="images/p09_gallery_05.jpg" alt="料理局部特寫 5" loading="lazy"></figure>
+        <figure class="tile"><img src="images/p09_gallery_06.jpg" alt="料理局部特寫 6" loading="lazy"></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- 第 10 頁：餘韻 / 預告 -->
+  <section id="p10" class="page section" aria-label="餘韻與預告">
+    <div class="container">
+      <div class="section-title"><h1>餘韻</h1></div>
+      <figure class="hero" style="aspect-ratio: 2/1; margin-top: 10px; margin-bottom: 34px;"><img src="images/memory.png" alt="A tranquil, moody coastline representing clarity and aftertaste." loading="lazy"></figure>
+      <p class="lead" style="margin-top: 0;">每一道菜都是一次對話：與產地、與廚房、也與自己的味覺記憶。下一期，我們將前往更冷的海岸，尋找另一種「清澈」。</p>
+    </div>
+  </section>
+
+  <footer>© 2025 Food Aesthetics — A Minimal Culinary Journal</footer>
+</body>
+</html>
